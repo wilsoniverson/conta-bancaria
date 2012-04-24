@@ -1,1 +1,24 @@
 Nota: 
+
+Problema:
+Considerando que uma conta bancária é caracterizada.
+Pelo seu número (Valor Interiro), Saldo e Limite de Saca Negativo. Escreva uma programa que para uma conta bancária, apresente ao
+usuário um menu de opções, conforme a seguir:
+    1. Efetuar Depósito
+    2. Efetuar Saque
+    3. Consultar Saldo
+    4. Sair (encerrar)
+Obs:
+    1º  A Conta deve ser tratada como um objeto.
+    2º Uma Conta só pode aceitar depósito se o valor do depósito for maior que zero.
+    3º Uma Conta só pode aceitar saldo, caso o limite seja maior ou igual (>=) ao valor do saque. E o valor do saque deve ser maior (>) a zero.
+   
+Atributos: Número Conta, Valor Saldo, Valor Limite.
+Ações: Efeituação de Saque, Efetuação de Depósito, ... etc etc
+Interface: Usuário Digita dados da conta.
+
+Notas:
+    1 - " umaConta.deposito (-100); " É inválido para o método, precisa ser implementado que ele não aceite valores negativos.
+    2 - só é possível " umaConta.efetuasaque (100) " porém não existe fundo suficiênte, também deve ser implementado, só se exíste fundo.
+    3 - "menu" só termina se o usuário pedir para terminar o programa.
+    4 - todas as operações são efetuadas em cima de mesma conta, poís é a mesma conta.
