@@ -7,23 +7,22 @@ public class Interface {
         int m = Integer.parseInt (o);
         return m;
     }
-    public int askN () {
+    public String askN () {
         String x = JOptionPane.showInputDialog( "Digite seu Número de Identificação Bancária");
-        int n = Integer.parseInt (x);
-        return n;
+        return x;
     }
     public double askWithdraw (String a) {
-        String x = JOptionPane.showInputDialog(a + "Digite o valor que deseja sacar");
-        int v = Integer.parseInt (x);
+        String b = JOptionPane.showInputDialog(a + "Digite o valor que deseja sacar:");
+        double v = Double.parseDouble (b);
         return v;
     }
-    public double askLL (String a) {
-        String x = JOptionPane.showInputDialog (a + "Digite o Valor Limite de sua conta");
-        int l = Integer.parseInt (x);
+    public double askL (String a) {
+        String x = JOptionPane.showInputDialog (a + "Digite o Valor Limite de sua conta:");
+        double l = Double.parseDouble (x);
         return l;
     }
     public double askDeposit (String a) {
-        String x = JOptionPane.showInputDialog (a + "Digite o valor a ser depositado");
+        String x = JOptionPane.showInputDialog (a + "Digite o valor a ser depositado:");
         double g = Double.parseDouble (x);
         return g;
     }
