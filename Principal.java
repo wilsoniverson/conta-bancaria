@@ -7,12 +7,11 @@ public class Principal {
             l = aI.askL("Valor inválido! Por favor digite um valor positivo\n");
         }
         Account acc = new Account(n, 0.0, l);
-        int x = 0;
-        while (x == 0 ||x == 1 || x == 2 || x == 3 ) {
+        int x;
+        do{
             x = aI.showMenu("Opções:");
-            while (x !=1 && x !=2 && x!=3 && x!=4) {
+            while (x !=1 && x !=2 && x!=3 && x!=4)
                 x = aI.showMenu("Opção inválida! Por favor digite novamente:");
-            }
             if (x==1) {
                 double deposit = aI.askDeposit("");
                 boolean aux = acc.makeDeposit (deposit);
@@ -32,6 +31,6 @@ public class Principal {
             }
             if (x==3) 
                 aI.showBalance (acc.checkBalance ());
-        }
+        }while (x==1 || x==2 || x==3);
     }
 }
