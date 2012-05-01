@@ -14,20 +14,20 @@ public class Principal {
                 x = aI.showMenu("Opção inválida! Por favor digite novamente:");
             }
             if (x==1) {
-                double a = aI.askDeposit("");
-                boolean b = acc.makeDeposit (a);
-                while (b == false) {
-                    a = aI.askDeposit("Valor inválido!\n");
-                    b = acc.makeDeposit (a);
+                double deposit = aI.askDeposit("");
+                boolean aux = acc.makeDeposit (deposit);
+                while (aux == false) {
+                    deposit = aI.askDeposit("Valor inválido!\n");
+                    aux = acc.makeDeposit (deposit);
                 }
                 aI.depositMade();
             }
             if (x==2) {
-                double a = aI.askWithdraw("");
-                boolean b = acc.makeWithdraw(a);
-                while (b == false) {
-                    a = aI.askWithdraw ("Valor inválido, superior ao seu limite ou saldo insuficiente!\n");
-                    b = acc.makeWithdraw(a);
+                double withdraw = aI.askWithdraw("");
+                boolean aux = acc.makeWithdraw(withdraw);
+                while (aux == false) {
+                    withdraw = aI.askWithdraw ("Valor inválido, superior ao seu limite ou saldo insuficiente!\n");
+                    aux = acc.makeWithdraw(withdraw);
                 }
             }
             if (x==3) 
