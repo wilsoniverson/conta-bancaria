@@ -12,25 +12,28 @@ public class Principal {
             x = aI.showMenu("Opções:");
             while (x !=1 && x !=2 && x!=3 && x!=4)
                 x = aI.showMenu("Opção inválida! Por favor digite novamente:");
-            if (x==1) {
-                double deposit = aI.askDeposit("");
-                boolean aux = acc.makeDeposit (deposit);
-                while (aux == false) {
-                    deposit = aI.askDeposit("Valor inválido!\n");
-                    aux = acc.makeDeposit (deposit);
-                }
-                aI.depositMade();
-            }
-            if (x==2) {
-                double withdraw = aI.askWithdraw("");
-                boolean aux = acc.makeWithdraw(withdraw);
-                while (aux == false) {
-                    withdraw = aI.askWithdraw ("Valor inválido, superior ao seu limite ou saldo insuficiente!\n");
+                switch(x){
+                case 1:
+                    double deposit = aI.askDeposit("");
+                    boolean aux = acc.makeDeposit (deposit);
+                    while (aux == false) {
+                        deposit = aI.askDeposit("Valor inválido!\n");
+                        aux = acc.makeDeposit (deposit);
+                    }
+                    aI.depositMade();
+                    break;
+                case 2:
+                    double withdraw = aI.askWithdraw("");
                     aux = acc.makeWithdraw(withdraw);
-                }
+                    while (aux == false) {
+                        withdraw = aI.askWithdraw ("Valor inválido, superior ao seu limite ou saldo insuficiente!\n");
+                        aux = acc.makeWithdraw(withdraw);
+                    }
+                    break;
+                case 3: 
+                    aI.showBalance (acc.checkBalance ());
+                break;
             }
-            if (x==3) 
-                aI.showBalance (acc.checkBalance ());
         }while (x==1 || x==2 || x==3);
     }
 }
